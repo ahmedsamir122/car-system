@@ -22,7 +22,7 @@ app.use(helmet());
 
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://car-system-tyfj.onrender.com"],
+    origin: ["http://localhost:5173", "https://car-system-fawn.vercel.app"],
     credentials: true,
   })
 );
