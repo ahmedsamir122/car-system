@@ -50,7 +50,10 @@ exports.updateCar = catchAsync(async (req, res, next) => {
   });
 });
 exports.deleteCar = catchAsync(async (req, res, next) => {
+  const carId = req.params.id;
   await Car.findByIdAndDelete(req.params.id);
+  await Sale.deleteMany({ car: carId });
+
   res.status(204).json({
     status: "success",
     data: null,

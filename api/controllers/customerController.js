@@ -51,7 +51,10 @@ exports.updateCustomer = catchAsync(async (req, res, next) => {
   });
 });
 exports.deleteCustomer = catchAsync(async (req, res, next) => {
+  const customerId = req.params.id;
   await Customer.findByIdAndDelete(req.params.id);
+  await Sale.deleteMany({ customer: customerId });
+
   res.status(204).json({
     status: "success",
     data: null,

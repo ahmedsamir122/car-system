@@ -2,6 +2,7 @@ const catchAsync = require("../utils/catchAsync");
 const AppError = require("../utils/appError");
 const APIFeatures = require("../utils/apiFeatures");
 const Supplier = require("../models/supplierModel");
+const Purchase = require("../models/purchaseModel");
 
 exports.getAllSuppliers = catchAsync(async (req, res, next) => {
   const features = new APIFeatures(Supplier.find(), req.query).filter();
@@ -51,7 +52,11 @@ exports.updateSupplier = catchAsync(async (req, res, next) => {
   });
 });
 exports.deleteSupplier = catchAsync(async (req, res, next) => {
+  const supplierId = req.params.id;
+
   await Supplier.findByIdAndDelete(req.params.id);
+  await Purchase.deleteMany({ supplier: supplierId });
+
   res.status(204).json({
     status: "success",
     data: null,
