@@ -12,21 +12,20 @@ const isTokenExpired = () => {
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem("token");
 
-  if (token) {
-    if (isTokenExpired()) {
-      localStorage.removeItem("token");
-      localStorage.removeItem("expiresin");
-      localStorage.removeItem("user");
+  const tokenExpiredDate = localStorage.getItem("expiresin");
+  const isExpired = tokenExpiredDate && Date.now() > Number(tokenExpiredDate);
 
-      window.location.href = "/signin";
-      return;
-    }
-    config.headers.Authorization = `Bearer ${token}`;
+  if (!token || isExpired) {
+    localStorage.removeItem("token");
+    localStorage.removeItem("expiresin");
+    localStorage.removeItem("user");
+
+    // better to NOT redirect here directly
+    // just reject request instead
+    return Promise.reject("No valid token");
   }
-  if (!token) {
-    window.location.href = "/signin";
-    return;
-  }
+
+  config.headers.Authorization = `Bearer ${token}`;
 
   return config;
 });
