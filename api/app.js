@@ -35,12 +35,6 @@ const limiter = rateLimit({
 app.use("/api", limiter);
 
 app.use(
-  helmet({
-    crossOriginResourcePolicy: false,
-  })
-);
-
-app.use(
   cors({
     credentials: true,
     origin: true,
