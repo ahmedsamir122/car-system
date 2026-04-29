@@ -26,24 +26,6 @@ app.use(helmet());
 //     origin: ["http://localhost:5173", "https://car-system-fawn.vercel.app"],
 //   })
 // );
-const corsOptions = {
-  origin: [
-    "https://car-system-fawn.vercel.app",
-    "https://car-system-kvc2euodr-engahmedelmitwalli1gmailcoms-projects.vercel.app",
-    "http://localhost:5173",
-  ],
-  credentials: true,
-  methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
-};
-
-app.use(
-  helmet({
-    crossOriginResourcePolicy: false,
-  })
-);
-
-app.use(cors(corsOptions));
-app.options("*", cors(corsOptions));
 
 const limiter = rateLimit({
   max: 1000000,
@@ -52,6 +34,33 @@ const limiter = rateLimit({
 });
 app.use("/api", limiter);
 
+app.use(
+  helmet({
+    crossOriginResourcePolicy: false,
+  })
+);
+
+// app.options("*", cors(corsOptions));
+app.use(
+  cors({
+    credentials: true,
+    origin: [
+      "https://car-system-fawn.vercel.app",
+      "https://car-system-kvc2euodr-engahmedelmitwalli1gmailcoms-projects.vercel.app",
+      "http://localhost:5173",
+    ],
+  })
+);
+// app.use(
+//   cors({
+//     credentials: true,
+//     origin: "https://donia-gamma.vercel.app",
+//   })
+// );
+app.use(function (req, res, next) {
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  next();
+});
 app.use(express.json({ limit: "3mb" }));
 
 app.use(mongoSanitize());
