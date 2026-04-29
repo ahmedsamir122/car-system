@@ -1,0 +1,12 @@
+.container {
+  display: grid;
+  grid-template-columns: 2fr 8fr;
+  gap: 20px;
+  padding: 25px;
+  background-color: var(--bg);
+  height: 100vh;
+}
+.navContainer {
+  background-color: var(--card);
+  border-radius: 7px;
+}

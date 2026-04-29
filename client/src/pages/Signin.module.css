@@ -1,0 +1,35 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+.title {
+  text-align: center;
+  text-decoration: underline;
+  margin-bottom: 16px;
+  font-size: 20px;
+}
+.input {
+  margin-bottom: 16px;
+  margin-top: 10px;
+  height: 36px;
+  font-size: 18px;
+}
+.input:focus {
+  outline: none;
+}
+.button {
+  display: block;
+  border: 1px solid var(--text);
+  font-size: 21px;
+  border-radius: 7px;
+  padding: 5px;
+  cursor: pointer;
+}
+.error {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 7px;
+}

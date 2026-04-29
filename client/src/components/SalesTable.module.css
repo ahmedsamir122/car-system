@@ -1,0 +1,66 @@
+.table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  color: var(--text);
+}
+
+.tableBody td {
+  padding: 0 12px;
+  border: 1px solid grey;
+  text-align: center;
+  height: 40px;
+}
+.tableHead {
+  font-size: 18px;
+  background-color: var(--bgTableHead);
+  color: var(--textTableHead);
+  padding: 10px;
+  height: 40px;
+  text-align: center;
+  border: 1px solid rgb(80, 77, 77);
+}
+.tableHead td {
+  border: 1px solid rgb(80, 77, 77);
+}
+.tableBody {
+  font-size: 14px;
+  margin-top: 5px;
+}
+.tableBody td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.dateCol {
+  width: calc(100% / 6);
+}
+
+.carNameCol {
+  width: calc(100% / 6);
+}
+
+.customerCol {
+  width: calc(100% / 6);
+}
+
+.phoneNumCol {
+  width: calc(100% / 6);
+}
+
+.priceCol {
+  width: calc(100% / 6);
+}
+.editCol {
+  width: calc(100% / 6);
+}
+.actionCell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+.actionIcon {
+  cursor: pointer;
+}

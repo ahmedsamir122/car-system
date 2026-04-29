@@ -1,0 +1,42 @@
+.table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+  color: var(--text);
+}
+.table th,
+.table td {
+  padding: 0 18px;
+}
+.tableHead {
+  font-size: 14px;
+}
+.tableBody {
+  font-size: 14px;
+  margin-top: 5px;
+}
+.tableBody td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.dateCol {
+  width: 12%;
+}
+
+.carNameCol {
+  width: 28%;
+}
+
+.customerCol {
+  width: 20%;
+}
+
+.phoneNumCol {
+  width: 20%;
+}
+
+.priceCol {
+  width: 20%;
+}

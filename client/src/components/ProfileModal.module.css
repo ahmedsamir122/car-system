@@ -1,0 +1,23 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+.modalContainer {
+  background: var(--card);
+  right: 30px;
+  top: 60px;
+  border-radius: 7px;
+  position: absolute;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.logOutButton {
+  cursor: pointer;
+}

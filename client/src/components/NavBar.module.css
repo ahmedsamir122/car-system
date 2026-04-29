@@ -1,0 +1,25 @@
+.logo {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 15px;
+}
+
+.list {
+  text-decoration: none;
+  font-size: 14px;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+}
+
+.linkContainer {
+  list-style: none;
+  padding-left: 15px;
+  margin-bottom: 25px;
+  color: var(--text);
+}
+.active {
+  color: blue;
+}

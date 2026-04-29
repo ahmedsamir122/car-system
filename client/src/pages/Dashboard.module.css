@@ -1,0 +1,70 @@
+.cardsContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 10px;
+}
+.card {
+  border-radius: 7px;
+  background-color: var(--card);
+  flex: 1;
+  color: var(--text);
+}
+.topCard {
+  text-align: center;
+  border-bottom: 1px solid rgb(224, 222, 222);
+  padding: 20px;
+}
+.bottomCard {
+  display: flex;
+  justify-content: space-between;
+  padding: 13px;
+}
+.monthText {
+  font-size: 12px;
+}
+.carNumber {
+  font-size: 12px;
+}
+.chartsContainer {
+  margin-top: 16px;
+  display: flex;
+  gap: 10px;
+}
+.lineChart {
+  margin-right: auto;
+  flex: 3;
+  border: 1px solid var(--border);
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+.circleChart {
+  flex: 1;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.lineChartTitle {
+  color: var(--text);
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.circleChartTitle {
+  color: var(--text);
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.recentSalesContainer {
+  margin-top: 10px;
+  border: 1px solid var(--border);
+}
+.recentTableTitle {
+  margin-left: 8px;
+  color: var(--text);
+}
