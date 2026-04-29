@@ -27,12 +27,19 @@ app.use(helmet());
 //   })
 // );
 const corsOptions = {
-  origin: ["http://localhost:5173", "https://car-system-fawn.vercel.app"],
-  credentials: true, //access-control-allow-credentials:true
-  optionSuccessStatus: 200,
+  origin: "https://car-system-fawn.vercel.app",
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
 };
+
+app.use(
+  helmet({
+    crossOriginResourcePolicy: false,
+  })
+);
+
 app.use(cors(corsOptions));
-app.options("*", cors());
+app.options("*", cors(corsOptions));
 
 const limiter = rateLimit({
   max: 1000000,
