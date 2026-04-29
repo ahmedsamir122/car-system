@@ -20,19 +20,17 @@ const app = express();
 
 app.use(helmet());
 
-// app.use(
-//   cors({
-//     origin: ["http://localhost:5173", "https://car-system-fawn.vercel.app"],
-//     credentials: true,
-//   })
-// );
 app.use(
   cors({
-    origin: "https://car-system-fawn.vercel.app",
-    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     credentials: true,
+    origin: ["http://localhost:5173", "https://car-system-fawn.vercel.app"],
   })
 );
+
+app.use(function (req, res, next) {
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  next();
+});
 app.options("*", cors());
 
 const limiter = rateLimit({
