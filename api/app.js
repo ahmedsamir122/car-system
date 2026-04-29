@@ -43,6 +43,11 @@ app.use(cors());
 // );
 app.options("*", cors());
 
+app.use((req, res, next) => {
+  console.log("Incoming origin:", req.headers.origin);
+  next();
+});
+
 app.use(express.json({ limit: "3mb" }));
 
 app.use(mongoSanitize());
