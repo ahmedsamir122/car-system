@@ -34,12 +34,7 @@ const limiter = rateLimit({
 });
 app.use("/api", limiter);
 
-app.use(
-  cors({
-    credentials: true,
-    origin: true,
-  })
-);
+app.use(cors());
 // app.use(
 //   cors({
 //     credentials: true,
@@ -48,10 +43,6 @@ app.use(
 // );
 app.options("*", cors());
 
-app.use(function (req, res, next) {
-  res.setHeader("Access-Control-Allow-Credentials", "true");
-  next();
-});
 app.use(express.json({ limit: "3mb" }));
 
 app.use(mongoSanitize());
