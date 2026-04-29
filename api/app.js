@@ -27,7 +27,11 @@ app.use(helmet());
 //   })
 // );
 const corsOptions = {
-  origin: "https://car-system-fawn.vercel.app",
+  origin: [
+    "https://car-system-fawn.vercel.app",
+    "car-system-kvc2euodr-engahmedelmitwalli1gmailcoms-projects.vercel.app",
+    "http://localhost:5173",
+  ],
   credentials: true,
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
 };
