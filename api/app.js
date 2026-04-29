@@ -40,15 +40,10 @@ app.use(
   })
 );
 
-// app.options("*", cors(corsOptions));
 app.use(
   cors({
     credentials: true,
-    origin: [
-      "https://car-system-fawn.vercel.app",
-      "https://car-system-kvc2euodr-engahmedelmitwalli1gmailcoms-projects.vercel.app",
-      "http://localhost:5173",
-    ],
+    origin: true,
   })
 );
 // app.use(
@@ -57,6 +52,8 @@ app.use(
 //     origin: "https://donia-gamma.vercel.app",
 //   })
 // );
+app.options("*", cors());
+
 app.use(function (req, res, next) {
   res.setHeader("Access-Control-Allow-Credentials", "true");
   next();
