@@ -20,9 +20,16 @@ const app = express();
 
 app.use(helmet());
 
+// app.use(
+//   cors({
+//     origin: ["http://localhost:5173", "https://car-system-fawn.vercel.app"],
+//     credentials: true,
+//   })
+// );
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://car-system-fawn.vercel.app"],
+    origin: "https://car-system-fawn.vercel.app",
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     credentials: true,
   })
 );
