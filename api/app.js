@@ -45,6 +45,12 @@ app.use("/api/v1/sales", saleRouter);
 app.use("/api/v1/expenses", expenseRouter);
 app.use("/api/v1/purchases", purchaseRouter);
 app.use("/api/v1/installments", installmentRouter);
+app.get("/", (req, res) => {
+  res.status(200).json({
+    status: "success",
+    message: "API is running 🚀",
+  });
+});
 
 app.all("*", (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server`));

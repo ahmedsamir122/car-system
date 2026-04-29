@@ -9,14 +9,7 @@ const DB = `mongodb+srv://${process.env.DB_USER}:${encodeURIComponent(
 
 mongoose.connect(DB).then((con) => console.log("db connection succeefully"));
 
-const port = 8000 || process.env.PORT;
-
-app.get("/", (req, res) => {
-  res.status(200).json({
-    status: "success",
-    message: "API is running 🚀",
-  });
-});
+const port = process.env.PORT || 8000;
 
 app.listen(port, () => {
   console.log(`app is running on port${port}...`);
