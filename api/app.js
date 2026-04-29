@@ -20,7 +20,12 @@ const app = express();
 
 app.use(helmet());
 
-app.use(cors());
+app.use(
+  cors({
+    origin: ["http://localhost:5173", "https://car-system-tyfj.onrender.com"],
+    credentials: true,
+  })
+);
 app.options("*", cors());
 
 const limiter = rateLimit({
