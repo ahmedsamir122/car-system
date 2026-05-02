@@ -41,7 +41,7 @@ function ExpensesTable(props) {
                     <MdOutlineModeEdit />
                   </div>
                   <div>
-                    <DeleteModal id={bill.id} source="expenses" />
+                    <DeleteModal id={bill._id} source="expenses" />
                   </div>
                 </td>
               </tr>
