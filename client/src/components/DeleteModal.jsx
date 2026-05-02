@@ -49,7 +49,7 @@ export default function DeleteModal(props) {
         <DialogTitle id="alert-dialog-title">{"Warning"}</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-            Are you sure you want delete this car
+            Are you sure you want delete
           </DialogContentText>
         </DialogContent>
         <DialogActions>

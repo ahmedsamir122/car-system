@@ -20,7 +20,7 @@ function EditExpensesModal(props) {
       return api.post("/expenses", data);
     }
     if (props.mode === "edit") {
-      return api.patch(`/expenses/${props.bill.id}`, data);
+      return api.patch(`/expenses/${props.bill._id}`, data);
     }
   };
 

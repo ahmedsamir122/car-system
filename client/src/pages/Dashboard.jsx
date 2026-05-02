@@ -68,7 +68,7 @@ function Dashboard() {
           <div className={classes.bottomCard}>
             <h4 className={classes.monthText}>this month</h4>
             <h4 className={classes.carNumber}>{`${
-              dataSoldCar?.data.availableCars + current.totalSold
+              dataSoldCar?.data.availableCars + current.totalSold || 0
             } car`}</h4>
           </div>
         </div>
@@ -76,9 +76,9 @@ function Dashboard() {
           <div className={classes.topCard}>Available Cars</div>
           <div className={classes.bottomCard}>
             <h4 className={classes.monthText}>this month</h4>
-            <h4
-              className={classes.carNumber}
-            >{`${dataSoldCar?.data.availableCars} car`}</h4>
+            <h4 className={classes.carNumber}>{`${
+              dataSoldCar?.data.availableCars || 0
+            } car`}</h4>
           </div>
         </div>
         <div className={classes.card}>

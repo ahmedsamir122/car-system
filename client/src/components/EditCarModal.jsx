@@ -19,7 +19,7 @@ function EditCarModal(props) {
       return api.post("/cars", data);
     }
     if (props.mode === "edit") {
-      return api.patch(`/cars/${props.car.id}`, data);
+      return api.patch(`/cars/${props.car._id}`, data);
     }
   };
 

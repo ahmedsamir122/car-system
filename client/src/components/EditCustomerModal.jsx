@@ -18,7 +18,7 @@ function EditCustomerModal(props) {
       return api.post("/customers", data);
     }
     if (props.mode === "edit") {
-      return api.patch(`/customers/${props.customer.id}`, data);
+      return api.patch(`/customers/${props.customer._id}`, data);
     }
   };
 

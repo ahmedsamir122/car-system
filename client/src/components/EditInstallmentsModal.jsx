@@ -152,7 +152,7 @@ function EditInstallmentsModal(props) {
               <div className={classes.carList}>
                 {cars.map((car) => (
                   <div
-                    key={car.id}
+                    key={car._id}
                     onClick={() => setSelectedCar(car)}
                     className={classes.option}
                   >

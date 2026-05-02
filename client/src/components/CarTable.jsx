@@ -45,7 +45,7 @@ function CarTable(props) {
                     <MdOutlineModeEdit />
                   </div>
                   <div>
-                    <DeleteModal id={car.id} source="cars" />
+                    <DeleteModal id={car._id} source="cars" />
                   </div>
                 </td>
               </tr>

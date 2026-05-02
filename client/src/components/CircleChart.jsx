@@ -4,8 +4,8 @@ function CircleChart(props) {
   const size = { width: 200, height: 200 };
   // Test data
   const desktopOS = [
-    { id: "Cash", value: props.data[0]?.percentage || 0 },
-    { id: "Credit", value: props.data[1]?.percentage || 0 },
+    { id: "Cash", value: Math.round(props.data[0]?.percentage || 0) },
+    { id: "Credit", value: Math.round(props.data[1]?.percentage || 0) },
   ];
 
   const valueFormatter = (value) => `${value}%`;

@@ -22,7 +22,7 @@ function Signin() {
     formState: { errors, isValid },
   } = useForm({ mode: "onSubmit" });
 
-  const { mutate, error, isError } = useMutation({
+  const { mutate, error, isError, isLoading } = useMutation({
     mutationFn: postData,
     onSuccess: (data) => {
       console.log(data.data.data.user);
@@ -74,7 +74,9 @@ function Signin() {
           {isError && (
             <p className={classes.error}>{error.response.data.message}</p>
           )}
-          <button className={classes.button}>Sign in</button>
+          <button type="submit" className={classes.button} disabled={isLoading}>
+            {isLoading ? "Loading..." : "Sign in"}
+          </button>
         </form>
       </div>
     </div>
