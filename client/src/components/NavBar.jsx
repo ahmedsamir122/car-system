@@ -100,7 +100,7 @@ function NavBar() {
             <span>Expenses</span>
           </NavLink>
         </li>
-        <li className={classes.linkContainer}>
+        {/* <li className={classes.linkContainer}>
           <NavLink
             to="/installments"
             className={({ isActive }) =>
@@ -121,7 +121,7 @@ function NavBar() {
             <TbReport />
             <span>Reports</span>
           </NavLink>
-        </li>
+        </li> */}
       </ul>
     </div>
   );

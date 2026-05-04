@@ -18,7 +18,7 @@ function SupplierTable(props) {
           <tr>
             <td className={classes.dateCol}>Name</td>
             <td className={classes.carNameCol}>Phone</td>
-            <td className={classes.phoneNumCol}>Company</td>
+            <td className={classes.phoneNumCol}>Address</td>
             <td className={classes.editCol}>Actions</td>
           </tr>
         </thead>
