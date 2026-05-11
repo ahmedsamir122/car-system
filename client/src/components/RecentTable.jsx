@@ -1,6 +1,19 @@
 import classes from "./RecentTable.module.css";
+import api from "../api/axios";
+import { useQuery } from "@tanstack/react-query";
 
 function RecentTable() {
+  const { isLoading, data, isError, error, isFetching, refetch } = useQuery({
+    queryKey: "sales",
+    queryFn: () => api.get(`/sales?limit=1&page=1`),
+    staleTime: 5000,
+  });
+
+  if (isLoading) {
+    return <p>loading...</p>;
+  }
+
+  console.log(data.data.data.data);
   return (
     <table className={classes.table}>
       <thead className={classes.tableHead}>
@@ -15,11 +28,11 @@ function RecentTable() {
 
       <tbody className={classes.tableBody}>
         <tr>
-          <td>04-june-2024</td>
-          <td>Toyota Rush 2026 v1 hgghjhgjhgjhjhgjhgjgjggjgjgjgj</td>
-          <td>Ahmed adel</td>
-          <td>01055336369</td>
-          <td>900000</td>
+          <td>{data.data.data.data[0].createdAt}</td>
+          <td>{data.data.data.data[0].car.brand}</td>
+          <td>{data.data.data.data[0].name}</td>
+          <td>{data.data.data.data[0].customer.phone}</td>
+          <td>{data.data.data.data[0].price}</td>
         </tr>
       </tbody>
     </table>
